@@ -85,8 +85,6 @@ export default function Button({
     const content = children ?? label;
     const isIconOnly = !content && Boolean(icon);
 
-    const resolvedAspect: Aspect = isIconOnly ? "square" : aspect;
-
     const isDisabled = disabled || loading;
     const isVertical = iconPosition === "top" || iconPosition === "bottom";
 
@@ -132,7 +130,7 @@ export default function Button({
     const buttonClassName = [
         baseStyles,
         shapeStyles[shape],
-        aspectStyles[resolvedAspect],
+        aspectStyles[aspect],
         getColorVariantStyles(color, variant, !isDisabled),
         isIconOnly ? iconOnlySizeStyles[size] : sizeStyles[size],
         interactionStyles[interaction],
