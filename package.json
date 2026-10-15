@@ -19,7 +19,7 @@
     "clean:post": "rimraf dist/dev && rimraf dist/sandbox && rimraf dist/package && rimraf dist/vite.config.js",
     "sync": "tsx dev/syncConfig.ts",
     "minify": "npx esbuild \"dist/**/*.js\" --format=esm --minify --banner:js=\"/* This file is part of sonarUI. Copyright (c) 2026 AvatarKage. Released under the MIT license. */\" --outdir=dist --allow-overwrite",
-    "publish:npm": "cd package && npm publish && cd ../../",
+    "publish": "cd package && npm publish && cd ../../",
     "build:npm": "cd package && tsx ../../dev/node/buildNodePackage.mts && cd ../../"
   },
   "dependencies": {
