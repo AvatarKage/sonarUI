@@ -533,6 +533,244 @@ const components: ComponentDefinition[] = [
                             </div>
                         ),
                     },
+                    {
+                        id: "social-login",
+                        title: "Social Login",
+                        code: [
+                            `<Button icon="logos:google-icon" style={{ "--color-neutral": "#ffffff", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:apple" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="logos:microsoft-icon" style={{ "--color-neutral": "#ffffff", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:facebook" style={{ "--color-neutral": "#0866FF", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:github" style={{ "--color-neutral": "#181717", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:discord" style={{ "--color-neutral": "#5865F2", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:reddit" style={{ "--color-neutral": "#FF4500", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:x" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:gitlab" style={{ "--color-neutral": "#FC6D26", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:spotify" style={{ "--color-neutral": "#1ED760", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button icon="simple-icons:amazon" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                        ].join("\n"),
+                        component: (
+                            <div className="flex w-full max-w-sm flex-row gap-3">
+                                <Button
+                                    icon="logos:google-icon"
+                                    style={{
+                                        "--color-neutral": "#ffffff",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:apple"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="logos:microsoft-icon"
+                                    style={{
+                                        "--color-neutral": "#ffffff",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:facebook"
+                                    style={{
+                                        "--color-neutral": "#0866FF",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:github"
+                                    style={{
+                                        "--color-neutral": "#181717",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:discord"
+                                    style={{
+                                        "--color-neutral": "#5865F2",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:reddit"
+                                    style={{
+                                        "--color-neutral": "#FF4500",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:x"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:gitlab"
+                                    style={{
+                                        "--color-neutral": "#FC6D26",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:spotify"
+                                    style={{
+                                        "--color-neutral": "#1ED760",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    icon="simple-icons:amazon"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+                            </div>
+                        ),
+                    },
+                    {
+                        id: "social-login",
+                        title: "Social Login",
+                        code: [
+                            `<Button width="full" icon="logos:google-icon" label="Continue with Google" style={{ "--color-neutral": "#ffffff", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:apple" label="Continue with Apple" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="logos:microsoft-icon" label="Continue with Microsoft" style={{ "--color-neutral": "#ffffff", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:facebook" label="Continue with Facebook" style={{ "--color-neutral": "#0866FF", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:github" label="Continue with GitHub" style={{ "--color-neutral": "#181717", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:discord" label="Continue with Discord" style={{ "--color-neutral": "#5865F2", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:reddit" label="Continue with Reddit" style={{ "--color-neutral": "#FF4500", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:x" label="Continue with X" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:gitlab" label="Continue with GitLab" style={{ "--color-neutral": "#FC6D26", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:spotify" label="Continue with Spotify" style={{ "--color-neutral": "#1ED760", "--color-neutral-content": "#000000" } as React.CSSProperties} />`,
+                            `<Button width="full" icon="simple-icons:amazon" label="Continue with Amazon" style={{ "--color-neutral": "#000000", "--color-neutral-content": "#ffffff" } as React.CSSProperties} />`,
+                        ].join("\n"),
+                        component: (
+                            <div className="flex w-full max-w-sm flex-col gap-3">
+                                <Button
+                                    width="full"
+                                    icon="logos:google-icon"
+                                    label="Continue with Google"
+                                    style={{
+                                        "--color-neutral": "#ffffff",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:apple"
+                                    label="Continue with Apple"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="logos:microsoft-icon"
+                                    label="Continue with Microsoft"
+                                    style={{
+                                        "--color-neutral": "#ffffff",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:facebook"
+                                    label="Continue with Facebook"
+                                    style={{
+                                        "--color-neutral": "#0866FF",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:github"
+                                    label="Continue with GitHub"
+                                    style={{
+                                        "--color-neutral": "#181717",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:discord"
+                                    label="Continue with Discord"
+                                    style={{
+                                        "--color-neutral": "#5865F2",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:reddit"
+                                    label="Continue with Reddit"
+                                    style={{
+                                        "--color-neutral": "#FF4500",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:x"
+                                    label="Continue with X"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:gitlab"
+                                    label="Continue with GitLab"
+                                    style={{
+                                        "--color-neutral": "#FC6D26",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:spotify"
+                                    label="Continue with Spotify"
+                                    style={{
+                                        "--color-neutral": "#1ED760",
+                                        "--color-neutral-content": "#000000"
+                                    } as React.CSSProperties}
+                                />
+
+                                <Button
+                                    width="full"
+                                    icon="simple-icons:amazon"
+                                    label="Continue with Amazon"
+                                    style={{
+                                        "--color-neutral": "#000000",
+                                        "--color-neutral-content": "#ffffff"
+                                    } as React.CSSProperties}
+                                />
+                            </div>
+                        ),
+                    }
                 ],
             },
         ],
