@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { HelmetProvider } from "react-helmet-async"
 
 import "./styles/tailwind.css";
@@ -14,8 +14,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <BrowserRouter>
                 <Routes>
                     <Route path="*" element={<Home />} />
-                    
-                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </BrowserRouter>
         </HelmetProvider>
