@@ -6,9 +6,9 @@ const buttonProps: EditorProp[] = [
     {
         name: "color",
         values: [
-            "neutral",
             "primary",
             "secondary",
+            "neutral",
             "accent",
             "info",
             "success",

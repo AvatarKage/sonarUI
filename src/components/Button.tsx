@@ -64,7 +64,7 @@ const labelPositionStyles: Record<string, string> = {
 
 export default function Button({
     size = "base",
-    color = "neutral",
+    color = "primary",
     variant = "filled",
     shape = "rounded",
     width = "auto",

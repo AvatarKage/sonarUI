@@ -7,10 +7,10 @@ export type Size =
 ;
 
 export type Color =
-    | "neutral"
     | "primary"
     | "secondary"
     | "accent"
+    | "neutral"
     | "info"
     | "success"
     | "warning"
