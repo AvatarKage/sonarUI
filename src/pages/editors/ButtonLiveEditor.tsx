@@ -1,5 +1,5 @@
-import Button from "../components/Button.js";
-import LiveComponentEditor, { type EditorProp } from "./LiveEditor.js";
+import Button from "../../components/Button.js";
+import LiveComponentEditor, { type EditorProp } from "../LiveEditor.js";
 
 const buttonProps: EditorProp[] = [
     { name: "size", values: ["xs", "sm", "base", "lg", "xl"] },
@@ -18,7 +18,7 @@ const buttonProps: EditorProp[] = [
     },
     {
         name: "variant",
-        values: ["filled", "outline", "dash", "soft", "ghost", "link"],
+        values: ["filled", "outline", "underline", "dash", "soft", "ghost", "link"],
     },
     { name: "shape", values: ["square", "rounded", "circle"] },
     { name: "width", values: ["auto", "full"] },
