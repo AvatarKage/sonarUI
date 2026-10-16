@@ -1,6 +1,7 @@
 import type { 
     Aspect,
     Color, 
+    Interaction, 
     Pos, 
     Shape, 
     Size, 
@@ -10,33 +11,55 @@ import type {
 export function getColorVariantStyles(
     color: Color,
     variant: Variant,
-    includeHover?: boolean
+    {
+        includeHover,
+        includeActive
+    } : {
+        includeHover?: boolean;
+        includeActive?: boolean;
+    } = {}
 ) {
     switch(variant) {
         case "outline":
             return [
                 `bg-transparent border border-${color} text-${color}`,
                 includeHover && `hover:brightness-110 hover:bg-${color} hover:text-${color}-content`,
+                includeActive && `active:brightness-110 active:bg-${color} active:text-${color}-content`,
             ].filter(Boolean).join(" ");
+
+        case "underline":
+            return [
+                `bg-transparent border-b rounded-none border-${color} text-${color}`,
+                includeHover && "hover:brightness-110",
+                includeActive && "active:brightness-110",
+            ].filter(Boolean).join(" ");
+        
         case "dash":
             return [
                 `bg-transparent border border-dashed border-${color} text-${color}`,
                 includeHover && `hover:brightness-110 hover:bg-${color}/10`,
+                includeHover && `active:brightness-110 active:bg-${color}/10`,
             ].filter(Boolean).join(" ");
+        
         case "soft":
             return [
                 `bg-${color}/10 border border-${color}/20 text-${color}`,
                 includeHover && `hover:brightness-110 hover:bg-${color} hover:text-${color}-content`,
+                includeActive && `active:brightness-110 active:bg-${color} active:text-${color}-content`,
             ].filter(Boolean).join(" ");
+        
         case "ghost":
             return [
                 `bg-transparent border border-transparent text-${color}`,
                 includeHover && `hover:brightness-110 hover:bg-${color} hover:text-${color}-content`,
+                includeActive && `active:brightness-110 active:bg-${color} active:text-${color}-content`,
             ].filter(Boolean).join(" ");
+        
         case "link":
             return [
                 `bg-transparent border border-transparent text-${color} underline-offset-4`,
                 includeHover && "hover:brightness-110 hover:underline",
+                includeActive && "active:brightness-110 active:underline",
             ].filter(Boolean).join(" ");
 
         case "filled":
@@ -44,16 +67,17 @@ export function getColorVariantStyles(
             return [
                 `bg-${color} border border-${color} text-${color}-content`,
                 includeHover && "hover:brightness-110",
+                includeActive && "active:brightness-110",
             ].filter(Boolean).join(" ");
     }
 }
 
 export const sizeStyles: Record<Size, string> = {
-    xs: "py-1 px-2 text-xs",
-    sm: "py-1.5 px-3 text-sm",
-    base: "py-2 px-4 text-base",
-    lg: "py-2.5 px-5 text-lg",
-    xl: "py-3 px-6 text-xl"
+    xs: "py-1 px-2 text-xs min-h-6.5 min-w-6.5",
+    sm: "py-1.5 px-3 text-sm min-h-8.5 min-w-8.5",
+    base: "py-2 px-4 text-base min-h-10.5 min-w-10.5",
+    lg: "py-2.5 px-5 text-lg min-h-12.5 min-w-12.5",
+    xl: "py-3 px-6 text-xl min-h-13.5 min-w-13.5"
 };
 
 export const iconOnlySizeStyles: Record<Size, string> = {
@@ -111,4 +135,17 @@ export const focusRingStyles: Record<Color, string> = {
     success: "enabled:focus-visible:ring-2 enabled:focus-visible:ring-success-content enabled:focus-visible:ring-offset-2 enabled:focus-visible:ring-offset-base-100",
     warning: "enabled:focus-visible:ring-2 enabled:focus-visible:ring-warning-content enabled:focus-visible:ring-offset-2 enabled:focus-visible:ring-offset-base-100",
     error: "enabled:focus-visible:ring-2 enabled:focus-visible:ring-error-content enabled:focus-visible:ring-offset-2 enabled:focus-visible:ring-offset-base-100"
+};
+
+export const textPositionStyles: Record<string, string> = {
+    left: "text-left",
+    center: "text-center",
+    right: "text-right"
+};
+
+export const interactionStyles: Record<Interaction, string> = {
+    none: "",
+    press: "enabled:active:brightness-90",
+    scale: "enabled:active:scale-[0.98]",
+    offset: "enabled:active:translate-y-0.5"
 };

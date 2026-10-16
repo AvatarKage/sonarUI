@@ -7,10 +7,10 @@ export type Size =
 ;
 
 export type Color =
-    | "neutral"
     | "primary"
     | "secondary"
     | "accent"
+    | "neutral"
     | "info"
     | "success"
     | "warning"
@@ -20,6 +20,7 @@ export type Color =
 export type Variant =
     | "filled"
     | "outline"
+    | "underline"
     | "dash"
     | "soft"
     | "ghost"
@@ -57,4 +58,11 @@ export type HozPos =
 export type Pos = 
     | VerPos
     | HozPos
+;
+
+export type Interaction =
+    | "none"
+    | "press"
+    | "scale"
+    | "offset"
 ;
