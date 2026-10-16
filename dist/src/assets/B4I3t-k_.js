@@ -1,2 +1,2 @@
 /* This file is part of sonarUI. Copyright (c) 2026 AvatarKage. Released under the MIT license. */
-import{t as e}from"./zuUC0Ind.js";var r=e(((o,t)=>{t.exports={}})),p=r();export{p as default};
+import{t as e}from"./Cm-GFZ9C.js";var r=e(((o,t)=>{t.exports={}})),p=r();export{p as default};
