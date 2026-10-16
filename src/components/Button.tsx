@@ -9,7 +9,8 @@ import type {
     Width,
     Aspect,
     HozPos,
-    Pos
+    Pos,
+    Interaction
 } from "../types/common.type.js";
 
 import {
@@ -20,15 +21,11 @@ import {
     iconOnlySizeStyles,
     iconPositionStyles,
     iconSizeStyles,
+    interactionStyles,
+    textPositionStyles,
     shapeStyles,
     sizeStyles
 } from "../scripts/styles.js";
-
-type Interaction =
-    | "none"
-    | "press"
-    | "scale"
-    | "offset";
 
 interface Props extends Omit<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -49,19 +46,6 @@ interface Props extends Omit<
     interaction?: Interaction;
 }
 
-const interactionStyles: Record<Interaction, string> = {
-    none: "",
-    press: "enabled:active:brightness-90",
-    scale: "enabled:active:scale-[0.98]",
-    offset: "enabled:active:translate-y-0.5"
-};
-
-const labelPositionStyles: Record<string, string> = {
-    left: "text-left",
-    center: "text-center",
-    right: "text-right"
-};
-
 export default function Button({
     size = "base",
     color = "primary",
@@ -78,6 +62,7 @@ export default function Button({
     loading = false,
     interaction = "press",
     children,
+    className,
     style,
     type = "button",
     ...props
@@ -127,22 +112,26 @@ export default function Button({
 
     const visibleIcon = loading ? loadingElement : iconElement;
 
-    const buttonClassName = [
+    const combinedStyles = [
         baseStyles,
         shapeStyles[shape],
         aspectStyles[aspect],
-        getColorVariantStyles(color, variant, !isDisabled),
+        getColorVariantStyles(color, variant, {
+            includeHover: !isDisabled
+        }),
         isIconOnly ? iconOnlySizeStyles[size] : sizeStyles[size],
         interactionStyles[interaction],
         !isIconOnly ? iconPositionStyles[iconPosition] : "",
         width === "full" ? "w-full" : "w-auto",
         isIconOnly ? "justify-center" : "",
-        active && !isDisabled ? activeRingStyles[color] : ""
+        active && !isDisabled ? activeRingStyles[color] : "",
+        className
     ].filter(Boolean).join(" ");
 
     return (
         <button
             {...props}
+            className={combinedStyles}
             type={type}
             disabled={isDisabled}
             style={style}
@@ -153,7 +142,6 @@ export default function Button({
                     ? props["aria-label"] ?? label
                     : props["aria-label"]
             }
-            className={buttonClassName}
         >
             {isIconOnly ? (
                 visibleIcon
@@ -170,7 +158,7 @@ export default function Button({
                                 ? "flex-1"
                                 : "",
                             !isVertical
-                                ? labelPositionStyles[labelPosition]
+                                ? textPositionStyles[labelPosition]
                                 : "text-center"
                         ]
                             .filter(Boolean)
