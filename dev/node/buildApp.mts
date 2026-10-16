@@ -2,6 +2,7 @@ import { execa } from "execa";
 import cliProgress from "cli-progress";
 import chalk from "chalk";
 import { Stopwatch } from "@sapphire/stopwatch";
+import { readFile, writeFile } from "node:fs/promises";
 import { config } from "../../app.config.js";
 
 const sw = new Stopwatch();
@@ -18,8 +19,23 @@ const steps: Step[] = [
     { name: "Compiling Typescript...", cmd: "tsc" },
     { name: "Building frontend...", cmd: "vite", args: ["build", "--config", "vite.config.ts"] },
     { name: "Minifying code...", cmd: "npm", args: ["run", "minify"] },
+    { name: "Patching HTML...", cmd: "patch-html" },
     { name: "Cleaning workspace...", cmd: "npm", args: ["run", "clean:post"] }
 ];
+
+async function patchIndexHtml() {
+    const path = "dist/src/index.html";
+
+    let html = await readFile(path, "utf8");
+
+    const replacement = "https://avatarkage.github.io/sonarUI/dist/src";
+
+    html = html
+        .replace(`src="`, `src="${replacement}`)
+        .replace(`href="`, `href="${replacement}`);
+
+    await writeFile(path, html, "utf8");
+}
 
 let isDone = false;
 
@@ -63,14 +79,20 @@ for (let i = 0; i < steps.length; i++) {
     bar.update(i, { step: step.name });
 
     try {
-        await execa(step.cmd, step.args ?? [], {
-            stdio: "pipe",
-        });
+        if (step.cmd === "patch-html") {
+            await patchIndexHtml();
+        } else {
+            await execa(step.cmd, step.args ?? [], {
+                stdio: "pipe",
+            });
+        }
     } catch (error) {
         bar.stop();
+
         console.error(
             `${config.useNerdFonts ? " " : ""}Failed at step: ${step.name}`
         );
+
         throw error;
     }
 }
