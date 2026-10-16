@@ -14,10 +14,6 @@
 @source inline("hover:text-{neutral,primary,secondary,accent,info,success,warning,error}-content");
 
 @theme {
-    name: "default";
-    default: true;
-    color-scheme: "dark";
-
     --color-base-100: #090b16;
     --color-base-200: #111527;
     --color-base-300: #1d233b;
